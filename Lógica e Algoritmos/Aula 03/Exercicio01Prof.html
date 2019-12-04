@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>01</title>
+
+    <!-- JS -->
+
+    <script>
+        //Função
+        function calcular(){
+
+            //Obter o número
+            var numero = parseInt(document.getElementById("numero").value);
+
+            //Obter o elemento exibir
+            var exibir = document.getElementById("exibir");
+
+            //Antecessores
+            for(var indice = numero - 10; indice < numero; indice++){
+                exibir.innerHTML += indice+" ";
+            }
+
+            //Sucessores
+            for(var indice = numero; indice < numero + 11; indice++){
+                exibir.innerHTML += indice+" ";
+            }
+            
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Estrutura -->
+    <p id="exibir"></p>    
+    <input type="number" placeholder="Informe um número" id="numero">
+    <button onclick="calcular()">Enviar</button>
+
+</body>
+</html>

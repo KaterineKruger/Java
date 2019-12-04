@@ -1,0 +1,32 @@
+<!-- 5) Serão pedidas quatro notas e a quantidade de faltas.
+Exiba a média e a sua situação, onde 7 ou mais é aprovado, e abaixo de 7 reprovado.
+Caso as faltas sejam superiores a 15, o aluno está reprovado independente a média obtida. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 05</title>
+
+    <script>
+
+        var nota1 = parseFloat(prompt("Informe a primeira nota:"));
+        var nota2 = parseFloat(prompt("Informe a segunda nota:"));
+        var nota3 = parseFloat(prompt("Informe a terceira nota:"));
+        var nota4 = parseFloat(prompt("Informe a quarta nota:"));
+        var faltas = parseInt(prompt("Informe a quantidade de faltas do aluno:"));
+        var media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+        if(media >= 7 && faltas < 15){
+            alert("Parabéns, você está aprovado! Sua média é: " + media);
+        }else{
+            alert("Você reprovou, sua média é: " + media);
+        }
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

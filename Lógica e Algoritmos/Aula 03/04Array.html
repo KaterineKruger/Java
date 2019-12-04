@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>04 - Array</title>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        //Array de cores
+        var cores = ["Azul", "Amarelo", "Verde"];
+
+        //Adicionando cores
+        cores.push("Vermelho");
+
+        //Alterando cores
+        cores[1] = "Rosa";
+
+        //Excluindo cores
+        cores.splice(2, 1);
+
+        //Exibir cores
+        console.log(cores);
+
+        //Exibir cores For
+        for(var indice = 0; indice < cores.length; indice++){
+            document.write(indice + " - " + cores[indice] + "<hr>");
+        }
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

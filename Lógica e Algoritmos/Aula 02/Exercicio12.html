@@ -1,0 +1,32 @@
+<!-- 12) Utilizando como base o mês de novembro, faça com que seja informado um dia entre 1 e 30,
+retorne se é um dia de semana ou final de semana.
+Caso o usuário informe um dia inferior a 1 ou superior a 30 informe que a data é inválida. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 12</title>
+
+    <script>
+
+        var dia = parseInt(prompt("Informe um dia do mês de Novembro:"));
+
+        if(dia >= 1 && dia <= 30){
+            if(dia == 2 || dia == 3 || dia == 9 || dia == 10 || dia == 16 || dia == 17 || dia == 23 || dia == 24 || dia == 30){
+                alert("Você indicou um final de semana.");
+            }else{
+                alert("Você indicou um dia útil.");
+            }
+        }else{
+            alert("Dia inválido.");
+        }
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

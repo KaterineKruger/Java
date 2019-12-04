@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>03</title>
+
+    <!-- JS -->
+    <script>
+        //Função
+        function calcular(){
+            //Obter dados
+            var produto = document.getElementById("produto").value;
+            var valor = document.getElementById("valor").value;
+            //Obter o elemento exibit
+            var exibir = document.getElementById("exibir");
+            //Percentual
+            var percentual = 0.95;
+            //Mensagem
+            exibir.innerHTML = "O produto <b>"+produto+"</b> custa:<br><br>";
+            //Laço
+            for(var indice = 1; indice < 11; indice++){
+                var valorUnitario = valor * percentual;
+                var valorTotal = valorUnitario * indice;
+                exibir.innerHTML += indice+" X "+valorUnitario.toFixed(2)+" = "+valorTotal.toFixed(2) + "<hr>";
+                percentual -= 0.05;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Estrutura -->
+    <p id="exibir"></p>    
+    <input type="text" placeholder="Informe o produto" id="produto">
+    <input type="number" placeholder="Informe o valor" id="valor">
+    <button onclick="calcular()">Enviar</button>
+
+</body>
+</html>

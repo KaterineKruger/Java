@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08</title>
+
+    <script>
+        //Obter o peso e a altura
+        var peso = prompt("Informe seu peso");
+        var altura = prompt("Informe sua altura");
+       
+        //Cálculo de imc
+        var imc = peso / (altura * altura);
+        //Situação
+        var situacao = "Muito abaixo do peso";
+        if(imc <= 18.5){
+            situacao = "Abaixo do peso";
+        }else if(imc <= 18.5){
+            situacao = "Abaixo do peso";
+        }else if(imc <= 25){
+            situacao = "Peso normal";
+        }else if(imc <= 30  ){
+            situacao = "Acima do peso";
+        }else if(imc > 30){
+            situacao = "Obesidade";
+        }
+        //Mensagem
+        alert("O IMC é de: "+imc.toFixed(2)+" sua situação é: "+situacao);
+    </script>
+</head>
+<body>
+     
+</body>
+</html>

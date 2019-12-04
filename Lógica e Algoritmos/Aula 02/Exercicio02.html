@@ -1,0 +1,29 @@
+<!-- 2) Pedir três notas e realizar a média.
+Em seguida exiba a média e informe sua situação, onde média 7 ou superior é aprovado, caso contrário reprovado. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 02</title>
+
+    <script>
+
+        var nota1 = parseFloat(prompt("Informe a primeira nota:"));
+        var nota2 = parseFloat(prompt("Informe a segunda nota:"));
+        var nota3 = parseFloat(prompt("Informe a terceira nota:"));
+        var media = (nota1 + nota2 + nota3) / 3;
+
+        if(media >= 7){
+            alert("Parabéns, você está aprovado! Sua média é: " + media);
+        }else{
+            alert("Você reprovou, sua média é: " + media);
+        }
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>07 - Funções</title>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        //
+        function mensagem(){
+            alerta.innerHTML = "Olá";
+        }
+
+        function mensagem2(nome, cidade){
+            alerta.innerHTML = "Boa noite "+nome+" você mora em "+cidade;
+        }
+
+        function cidade(texto){
+            alerta.innerHTML = texto;
+        }
+        
+        function teclado(texto){
+            document.getElementById("exibir").innerHTML = texto;
+        }
+
+        function formulario(){
+
+            //Obter dados
+            var nome = document.getElementById("nome");
+            var idade = document.getElementById("idade");
+            var alerta = document.getElementById("alerta");
+
+            //Remover a formatação da linha
+            nome.style.border = "solid 1px gray";
+            idade.style.border = "solid 1px gray";
+
+            //Mensagem
+            if(nome.value==""||idade.value==""){
+                alerta.innerHTML = "Os campos precisam estar preenchidos!";
+                if(nome.value == ""){
+                    nome.style.border = "solid 1px red";
+                }if(idade.value == ""){
+                    idade.style.border = "solid 1px red";
+                }
+            }else{
+                alerta.innerHTML = "Olá "+nome.value+" você tem "+idade.value+" anos";
+            
+                //Limpar campos
+                nome.value = "";
+                idade.value = "";
+
+                //Cursor no campo nome
+                nome.focus();
+             
+            }
+
+        }
+        </script>
+
+        <style>
+            *{
+                outline: none;
+            }
+
+            input{
+                border: solid 1px gray;
+            }
+        </style>
+
+
+</head>
+<body>
+    
+    <button onclick="mensagem()">Clique aqui</button>
+    <button onclick="mensagem2('Katerine', 'Blumenau')">Clique aqui</button>
+    
+    <select onchange="cidade(this.value)">
+        <option>Escolha uma Cidade:</option>
+        <option>Blumenau</option>
+        <option>Indaial</option>
+        <option>Pomerode</option>
+    </select>
+
+    <hr>
+    <h1 id="exibir"></h1>
+    <input type="text" onkeyup="teclado(this.value)">
+
+    <hr>
+
+    <p id="alerta"></p>
+    <input type="text" placeholder="Nome" id="nome">
+    <input type="number" placeholder="Idade" id="idade">
+    <button onclick="formulario()">Enviar</button>
+
+
+</body>
+</html>

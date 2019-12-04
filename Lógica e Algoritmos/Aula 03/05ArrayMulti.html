@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>05 - ArrayMulti</title>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        //Array de produtos
+        var produtos = [
+            ["iPhone XR", "Apple", 4000],
+            ["Notebook Inspiron 3000", "Dell", 3600]
+        ];
+
+        //Adicionar um novo produto
+        produtos.push(["TV Led 32'", "Samsung", 2300]);
+
+        //Exibir produtos
+        console.table(produtos);
+
+        //Laço
+        for(var linha = 0; linha < produtos.length; linha++){
+
+            //Contar colunas
+            var qtdColunas = produtos[linha].length;
+
+            //Laço
+            for(var coluna = 0; coluna < qtdColunas; coluna++){
+                document.write(produtos[linha][coluna] + "<br>");
+            }
+
+            //Exibir linha no corpo da página
+            document.write("<hr>");
+
+        }
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

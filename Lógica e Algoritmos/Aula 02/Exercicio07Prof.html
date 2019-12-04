@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07</title>
+
+    <script>
+        //Obter a quantidade de moedas
+        var c01 = prompt("Informe a quantidade de moedas de R$ 0,01");
+        var c05 = prompt("Informe a quantidade de moedas de R$ 0,05");
+        var c10 = prompt("Informe a quantidade de moedas de R$ 0,10");
+        var c25 = prompt("Informe a quantidade de moedas de R$ 0,25");
+        var c50 = prompt("Informe a quantidade de moedas de R$ 0,50");
+        var r1 = prompt("Informe a quantidade de moedas de R$ 1,00");
+        //Contabilizar
+        var total = c01 * 0.01;
+            total += c05 * 0.05;
+            total += c10 * 0.10;
+            total += c25 * 0.25;
+            total += c50 * 0.50;
+            total += r1 * 1;
+        //Exibir total
+        alert("R$ "+total.toFixed(2));
+ 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

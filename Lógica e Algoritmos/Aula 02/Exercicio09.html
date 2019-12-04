@@ -1,0 +1,28 @@
+<!-- 9) Serão informados três números distintos, exiba em ordem crescente. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 09</title>
+
+    <script>
+    var numero1 = parseInt(prompt("Informe um número:"));
+    var numero2 = parseInt(prompt("Informe um número:"));
+    var numero3 = parseInt(prompt("Informe um número:"));
+
+    if(numero1 > numero2 && numero2 > numero3){
+        alert(numero3 + ", " + numero2 + ", " + numero1);
+    }else if(numero2 > numero1 && numero1 > numero3){
+        alert(numero3 + ", " + numero1 + ", " + numero2);
+    }else if(numero3 > numero1 && numero2 > numero1){
+        alert(numero1 + ", " + numero2 + ", " + numero3);
+    }
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

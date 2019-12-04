@@ -1,0 +1,72 @@
+<!-- 10) Haverá uma lista de produtos a serem consumidos:
+a) Pizza - R$ 8,00
+b) Hambúrguer - R$ 12,00
+c) Lasanha - R$ 9,00
+d) Pão de Queijo - R$ 2,50
+e) Pastel - R$ 4,00
+
+O cliente deverá selecionar apenas UM desses itens e a quantidade adquirida.
+Em seguida exiba o total e peça o valor pago pelo cliente, depois disso exiba o troco que deverá ser dado ao cliente.
+Valide caso o valor pago pelo cliente seja inferior ao total consumido. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 10</title>
+
+    <script>
+
+        var produto = prompt("Informe qual o produto desejado:\na) Pizza - R$ 8,00\nb) Hambúrguer - R$ 12,00\nc) Lasanha - R$ 9,00\nd) Pão de Queijo - R$ 2,50\ne) Pastel - R$ 4,00");
+        
+        if(produto == "a" || produto == "b" || produto == "c" || produto == "d" || produto == "e"){
+        var quantidade = parseInt(prompt("Informe a quantidade desejada:"));
+        //if(quantidade != isNaN){
+        var total = 0;
+        switch(produto){
+            case "a":
+            total = quantidade*8;
+            alert("Você escolheu " + quantidade + " Pizza(s), o valor é: R$ " + (total));
+            break;
+            case "b":
+            total = quantidade*12;
+            alert("Você escolheu " + quantidade + " Hambúrguer(es), o valor é: R$ " + (total));
+            break;
+            case "c":
+            total = quantidade*9;
+            alert("Você escolheu " + quantidade + " Lasanha(s), o valor é: R$ " + (total));
+            break;
+            case "d":
+            total = quantidade*2.5;
+            alert("Você escolheu " + quantidade + " Pão(ães) de Queijo, o valor é: R$ " + (total));
+            break;
+            case "e":
+            total = quantidade*8;
+            alert("Você escolheu " + quantidade + " Pastel(éis), o valor é: R$ " + (total));
+            break;
+            default:
+            alert("Opção inválida!");
+            break;
+        }
+
+        //FALTA BREAK PARA OPÇÃO INVÁLIDA!!!
+
+        var valorInseridoPeloCliente = parseFloat(prompt("Insira o valor pagamento:"));
+        if(valorInseridoPeloCliente < total){
+            alert("Pagamento insuficiente!");
+        }else{
+            alert("Pedido realizado com sucesso! Seu troco é de: R$ " + (valorInseridoPeloCliente - total));
+        }
+        //}else{
+        //alert("Opção Inválida!");
+        //}
+        }else{
+        alert("Opção Inválida!");
+        }
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício - 02</title>
+
+    <!-- JS -->
+    <script>
+        //Contadores
+        var cand1 = 0;
+        var cand2 = 0;
+        var cand3 = 0;
+        var cand4 = 0;
+        //Função de voto
+        function voto(candidato){
+            //Contabilizar
+            switch(candidato){
+                case 1:
+                cand1++;
+                break;
+                case 2:
+                cand2++;
+                break;
+                case 3:
+                cand3++;
+                break;
+                case 4:
+                cand4++;
+                break;
+            }
+        }
+        //Função de estatística
+        function estatisticas(){
+            //Verifica qual é o maior número de votos
+            var maisVotado = 0;
+            if(cand1 > maisVotado){
+                maisVotado = cand1;
+            }
+            if(cand2 > maisVotado){
+                maisVotado = cand2;
+            }
+            if(cand3 > maisVotado){
+                maisVotado = cand3;
+            }
+            if(cand4 > maisVotado){
+                maisVotado = cand4;
+            }
+            //Verifica quantos candidados tem mais votos
+            var qtdGanhadores = 0;
+            var nomes = "";
+            if(maisVotado != 0){
+                if(cand1 == maisVotado){
+                    qtdGanhadores++;
+                    nomes += "Candidato 1 ";
+                }
+                if(cand2 == maisVotado){
+                    qtdGanhadores++;
+                    nomes += "Candidato 2 ";
+                }
+                if(cand3 == maisVotado){
+                    qtdGanhadores++;
+                    nomes += "Candidato 3 ";
+                }
+                if(cand4 == maisVotado){
+                    qtdGanhadores++;
+                    nomes += "Candidato 4 ";
+                }
+            }
+            //Preparar mensagem de estatística se houver ao menos um voto
+            var mensagem = "Estatísticas\n";
+            if(maisVotado == 0){
+                mensagem = "Não houveram votos";
+            }else{
+                mensagem+= qtdGanhadores == 1 ? "O "+nomes+" está ganhando a votação" : "Os "+nomes+" estão empatados na votação";
+                mensagem+= "\n\n";
+                mensagem+= "Candidato 01 possui "+cand1+" votos\n";
+                mensagem+= "Candidato 02 possui "+cand2+" votos\n";
+                mensagem+= "Candidato 03 possui "+cand3+" votos\n";
+                mensagem+= "Candidato 04 possui "+cand4+" votos";
+            }
+            //Exibir Mensagem
+            alert(mensagem);
+        }
+    </script>
+</head>
+<body>
+    
+    <button onclick="voto(1)">Candidato 01</button>
+    <button onclick="voto(2)">Candidato 02</button>
+    <button onclick="voto(3)">Candidato 03</button>
+    <button onclick="voto(4)">Candidato 04</button>
+    <button onclick="estatisticas()">Estatísticas</button>
+
+</body>
+</html>

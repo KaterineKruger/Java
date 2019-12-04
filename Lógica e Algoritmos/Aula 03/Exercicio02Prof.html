@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>02</title>
+
+    <!-- JS -->
+    <script>
+        //Função
+        function calcular(){
+            //Obter números
+            var numero1 = parseInt(document.getElementById("numero1").value);
+            var numero2 = parseInt(document.getElementById("numero2").value);
+            //Obter o elemento exibir
+            var exibir = document.getElementById("exibir");
+            //Limpar o elemento exibir
+            exibir.innerHTML = "";
+            //Condicional
+            if(numero1 > numero2){
+                var indice = numero1;
+                while(indice >= numero2){
+                    exibir.innerHTML += indice+" ";
+                    indice--;
+                }
+            }else{
+                var indice = numero1;
+                while(indice <= numero2){
+                    exibir.innerHTML += indice+" ";
+                    indice++;
+                }
+            }
+            
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Estrutura -->
+    <p id="exibir"></p>    
+    <input type="number" placeholder="Informe um número" id="numero1">
+    <input type="number" placeholder="Informe outro número" id="numero2">
+    <button onclick="calcular()">Enviar</button>
+
+</body>
+</html>

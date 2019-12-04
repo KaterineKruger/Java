@@ -1,0 +1,41 @@
+<!-- 8) Criar um cálculo para IMC (Índice de Massa Corporal), para isso peça ao usuário uma altura e um peso.
+Exiba o seu IMC e sua situação:
+<  17    -   Muito abaixo do peso
+<= 18.5  -   Abaixo do peso
+<= 25    -   Peso normal
+<= 30    -   Acima do peso
+>  30    -   Obesidade
+
+O cálculo de imc é: peso / (altura * altura) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 08</title>
+
+    <script>
+
+        var peso = prompt("Informe seu peso:");
+        var altura = prompt("Informe sua altura:");
+        var imc = peso / (altura * altura);
+
+        if(imc < 17){
+            alert("Muito abaixo do peso - Seu imc é: " + imc);
+        }else if(imc <= 18.5){
+            alert("Abaixo do peso - Seu imc é: " + imc);
+        }else if(imc <= 25){
+            alert("Peso normal - Seu imc é: " + imc);
+        }else if(imc <= 30){
+            alert("Acima do peso - Seu imc é: " + imc);
+        }else{
+            alert("Obesidade - Seu imc é: " + imc);
+        }
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

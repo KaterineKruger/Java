@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo 01</title> 
+
+    <!-- JS -->
+    <script>
+        function texto(campo){
+            document.getElementById("minusculas").innerHTML = campo.toLowerCase();
+            document.getElementById("maiusculas").innerHTML = campo.toUpperCase();
+            document.getElementById("quantidade").innerHTML = campo.length;
+            document.getElementById("primeiraLetra").innerHTML = campo.charAt(0);
+        }
+    </script>
+</head>
+<body>
+    
+    <input type="text" placeholder="Digite algo" onkeyup="texto(this.value)">
+
+    <h1 id="minusculas"></h1>
+    <h1 id="maiusculas"></h1>
+    <h1 id="quantidade"></h1>
+    <h1 id="primeiraLetra"></h1>
+
+</body>
+</html>

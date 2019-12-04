@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício - 01</title>
+
+    <script>
+        //Função
+        function calcular(){
+            //Obter o número e o local onde será exibido o cálculo
+            var numero = document.getElementById("numero").value;
+            var exibir = document.getElementById("exibir");
+            //Laço
+            for(var indice=numero-1; indice>=1; indice--){
+                //Total
+                var total;
+                //Verificar se é a primeira vez que será feito o cálculo
+                if(indice == numero-1){
+                    total = numero * indice;
+                    exibir.innerHTML = numero+" X "+indice+" = "+ total + "<br>";
+                }else{
+                    exibir.innerHTML += total+" X "+indice+" = "+ (total*indice) + "<br>";
+                    total = total * indice;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Formulário -->
+    <input type="text" id="numero">
+    <button onclick="calcular()">Calcular</button>
+
+    <!-- Exibir cálculo -->
+    <p id="exibir"></p>
+</body>
+</html>

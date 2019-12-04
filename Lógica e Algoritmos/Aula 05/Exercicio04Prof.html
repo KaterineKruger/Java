@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício - 04</title>
+
+    <script>
+        
+        //Vetor
+        var vetor = [];
+        //Função para adicionar os números
+        function adicionar(){
+            //Obter o valor informado
+            var numero = document.getElementById("numero").value;
+            //Verificar se o número informado já existe no vetor
+            var existe = false;
+            for(var indice=0; indice<vetor.length; indice++){
+                if(vetor[indice] == numero){
+                    existe = true;
+                }
+            }
+            
+            //Adicionar o número (ou não)
+            if(existe == false){
+                vetor.push(numero);
+                alert("Número cadastrado.");
+            }else{
+                alert("O número "+numero+" já está cadastrado no vetor, tente novamente.");
+            }
+            //Exibir os valores caso haja cinco números no vetor
+            if(vetor.length == 5){
+                //Laço
+                for(var indice=0; indice<5; indice++){
+                    document.getElementById("exibir").innerHTML += vetor[indice]+"<hr>";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <!-- Formulário -->
+    <input type="text" id="numero">
+    <button onclick="adicionar()">Adicionar</button>
+
+    <!-- Exibir os números informados -->
+    <p id="exibir"></p>
+</body>
+</html>

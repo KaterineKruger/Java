@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>03 - DoWhile</title>
+
+    <!-- JavaScript -->
+
+    <script>
+
+
+        //Pedir um número
+        var numero = prompt("Informe um número:");
+    
+        //Estrutura de mensagem
+        var estrutura = "A tabuada de " + numero + " é: ";
+
+        //Laço - DO-WHILE
+        var indice = 0;
+        do{
+            estrutura += "\n" + numero + " X " + indice + " = " + (numero * indice);
+            indice++;
+        } while (indice < 11);
+
+        //Exibição
+        alert(estrutura);
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

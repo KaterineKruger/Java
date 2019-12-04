@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09</title>
+
+    <script>
+        //Obter dados
+        var n1  = parseInt(prompt("Informe a primeiro número"));
+        var n2  = parseInt(prompt("Informe a segundo número"));
+        var n3  = parseInt(prompt("Informe a terceiro número"));
+        //Condicional
+        if(n1 < n2 && n1 < n3 && n2 < n3){
+            alert(n1+" "+n2+" "+n3);
+        }else if(n1 < n2 && n1 < n3 && n3 < n2){
+            alert(n1+" "+n3+" "+n2);
+        }else if(n2 < n1 && n2 < n3 && n1 < n3){
+            alert(n2+" "+n1+" "+n3);
+        }else if(n2 < n1 && n2 < n3 && n3 < n1){
+            alert(n2+" "+n3+" "+n1);
+        }else if(n3 < n1 && n3 < n2 && n2 < n1){
+            alert(n3+" "+n2+" "+n1);
+        }else{
+            alert(n3+" "+n1+" "+n2);
+        }
+    </script>
+</head>
+<body>
+     
+</body>
+</html>

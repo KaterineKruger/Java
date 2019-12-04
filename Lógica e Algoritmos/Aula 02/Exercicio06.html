@@ -1,0 +1,38 @@
+<!-- 6) Serão pedidos dois números,
+em seguida será pedido para informar um cálculo (soma, subtração, multiplicação e divisão),
+exiba o resultado dependendo do cálculo selecionado. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 06</title>
+
+    <script>
+
+        var numero1 = parseFloat(prompt("Informe o primeiro número:"));
+        var numero2 = parseFloat(prompt("Informe o segundo número:"));
+        var operacao = parseInt(prompt("Informe o número que indica a operação desejada:\n1 - Soma;\n2 - Subtração;\n3 - Multiplicação;\n4 - Divisão."));
+
+        switch(operacao){
+            case 1:
+            alert("A soma dos números indicados é: " + (numero1 + numero2));
+            break;
+            case 2:
+            alert("A subtração dos números indicados é: " + (numero1 - numero2));
+            break;
+            case 3:
+            alert("A multiplicação dos números indicados é: " + (numero1 * numero2));
+            break;
+            case 4:
+            alert("A divisão dos números indicados é: " + (numero1 / numero2));
+            break;
+        }
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

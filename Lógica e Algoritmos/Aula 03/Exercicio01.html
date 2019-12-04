@@ -1,0 +1,36 @@
+<!-- 1) O usuário informa um número inteiro, em seguida exiba 
+os seus 10 sucessores e os 10 antecessores. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 01</title>
+
+    <script>
+
+        function calcular(){
+            var numero = parseInt(document.getElementById("numero").value);
+
+            var exibir = document.getElementById("exibir");
+
+            for(i = numero - 10; i < numero; i++){
+                exibir.innerHTML += i + " ";
+            }
+
+            for(i = numero; i < numero + 11; i++){
+                exibir.innerHTML += i + " ";
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <p id="exibir"></p>
+    <input type="number" placeholder="Digite um número" id="numero">
+    <button onclick="calcular()">Enviar</button>
+
+</body>
+</html>

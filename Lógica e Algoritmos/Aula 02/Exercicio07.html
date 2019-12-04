@@ -1,0 +1,36 @@
+<!-- 7) Deverá ser pedido a quantidade de cada uma das moedas existentes, após isso informar o total economizado.
+Vamos supor os seguintes valores:
+ 
+Moedas  |  Quantidade
+R$0,01 -   1
+R$0,05 -   1
+R$0,10 -   1
+R$0.25 -   1
+R$0.50 -   1	
+R$1.00 -   1
+Total: R$1,91 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 07</title>
+
+    <script>
+
+        var moeda01 = parseInt(prompt("Informe quantas moedas no valor de R$ 0,01 você possui:"));
+        var moeda05 = parseInt(prompt("Informe quantas moedas no valor de R$ 0,05 você possui:"));
+        var moeda10 = parseInt(prompt("Informe quantas moedas no valor de R$ 0,10 você possui:"));
+        var moeda25 = parseInt(prompt("Informe quantas moedas no valor de R$ 0,25 você possui:"));
+        var moeda50 = parseInt(prompt("Informe quantas moedas no valor de R$ 0,50 você possui:"));
+        var moeda1 = parseInt(prompt("Informe quantas moedas no valor de R$ 1,00 você possui:"));
+        var poupanca = parseFloat((moeda01*0.01) + (moeda05*0.05) + (moeda10*0.10) + (moeda25*0.25) + (moeda50*0.50) + (moeda1));
+        alert("O total de sua poupança é: R$ " + poupanca);
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

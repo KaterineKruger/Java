@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04 - Cálculos</title>
+
+    <!-- JavaScript -->
+    <script>
+        
+        // Obter dois valores
+        var numero1 = parseInt(prompt("Informe o primeiro número:"));
+        var numero2 = parseFloat(prompt("Informe o segundo número:"));
+
+        // Obter o tipo de cálculo
+        var calculo = parseInt(prompt("Indique o número da operação:\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão"));
+
+        // Realizar cálculo
+        switch(calculo){
+            case 1:
+            alert("O resultado da soma é: "+(numero1 + numero2));
+            break;
+
+            case 2:
+            alert("O resultado da subtração é: "+(numero1 - numero2));
+            break;
+
+            case 3:
+            alert("O resultado da multiplicação é: "+(numero1 * numero2));
+            break;
+
+            case 4:
+            alert("O resultado da divisão é: "+(numero1 / numero2));
+            break;
+
+            default:
+            alert("Operação inválida!")
+            break;
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

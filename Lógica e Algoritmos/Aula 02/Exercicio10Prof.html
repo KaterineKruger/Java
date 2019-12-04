@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10</title>
+
+    <script>
+        //Obter dados
+        var pedido  = prompt("1)Pizza \n2)Hambúrguer \n3)Lasanha \n4)Pão de Queijo \n5)Pastel");
+        var quantidade  = parseInt(prompt("Informe a quantidade pedida"));
+        //Condicional
+        var total = 0;
+        if(pedido == 1){
+            total = quantidade * 8
+        }else if(pedido == 2){
+            total = quantidade * 12
+        }else if(pedido == 3){
+            total = quantidade * 9
+        }else if(pedido == 4){
+            total = quantidade * 2.5
+        }else if(pedido == 5){
+            total = quantidade * 4
+        }
+        //Informar o total e pedir o valor pago pelo cliente
+        var valorPagoCliente = prompt("Total R$ "+total.toFixed(2));
+        //Informar o troco
+        if(valorPagoCliente < total){
+            alert("Pagamento inválido");
+        }else{
+            alert("Total a pagar R$ "+(valorPagoCliente - total).toFixed(2));
+        }
+ 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

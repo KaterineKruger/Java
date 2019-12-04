@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo 02</title>
+
+    <!-- JS -->
+    <script>
+        function formatar(e) {
+
+            //Obter o campo data
+            var campo = document.getElementById("campo");
+
+            //Verificar não se deseja apagar
+            if (e.keyCode != 8) {
+
+                //Validar se é um número
+                if (e.keyCode >= 48 && e.keyCode <= 57) {
+                    
+                    //Adicionar as barras
+                    if (campo.value.length == 2 || campo.value.length == 5) {
+                        campo.value += "/";
+                    }
+                } else {
+                    var quantidade = campo.value.length - 1;
+                    campo.value = campo.value.substr(0, quantidade);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <input type="text" placeholder="Data" onkeyup="formatar(event)" id="campo" maxlength="10">
+
+</body>
+
+</html>

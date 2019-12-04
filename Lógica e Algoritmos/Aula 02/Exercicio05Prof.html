@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05</title>
+
+    <script>
+        //Obter dados
+        var nota1  = parseFloat(prompt("Informe a primeira nota"));
+        var nota2  = parseFloat(prompt("Informe a segunda nota"));
+        var nota3  = parseFloat(prompt("Informe a terceira nota"));
+        var nota4  = parseFloat(prompt("Informe a quarta nota"));
+        var faltas  = prompt("Informe as faltas");
+        //Média
+        var media = (nota1+nota2+nota3+nota4)/4;
+        //Retorno
+        if(faltas > 15){
+            alert("Reprovado por faltas");
+        }else if(media >= 7){
+            alert("Aprovado");
+        }else{
+            alert("Reprovado por notas");
+        } 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
