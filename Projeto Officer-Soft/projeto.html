@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro Funcionários Officer Soft</title>
+
+    <!-- Bootstrap -->
+    <!-- link rel = rodar um link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <!-- link href = criar a conexão com outra aba do VSCode -->
+    <link href="estilo.css" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <!-- script src = criar a conexão com outra aba do VSCode no JS -->
+    <script src="script.js"></script>
+
+    <!-- Ícone aba -->
+    <link rel="shortcut icon" type="imagem/x-icon" href="favicon.ico" />
+
+</head>
+
+<body>
+
+    <!-- Imagem Topo -->
+    <style>
+        * {
+            margin: 20px;
+            padding: 0px;
+        }
+
+        body {
+            background-image: url("OfficerSoft.png");
+            background-repeat: no-repeat;
+            background-position: top;
+            margin: auto;
+        }
+
+    </style>
+    <!-- Mensagem -->
+    <p id="mensagem" class="alert"></p>
+
+    <!-- Formulário -->
+    <div>
+        <!-- Campos -->
+        <input type="hidden" id="indice">
+        <input type="text" placeholder="Nome" class="form-control" id="nome">
+        <input type="text" placeholder="CPF" class="form-control" id="cpf">
+        <input type="text" placeholder="Cargo" class="form-control" id="cargo">
+        <input type="text" placeholder="Setor" class="form-control" id="setor">
+
+        <!-- Botões -->
+        <button class="btn btn-outline-info" id="btnCadastrar" onclick="cadastrar()">Cadastrar</button>
+        <button class="btn btn-outline-warning" id="btnAlterar" onclick="alterar()">Alterar</button>
+        <button class="btn btn-outline-danger" id="btnExcluir" onclick="excluir()">Excluir</button>
+        <button class="btn btn-outline-secondary" id="btnCancelar" onclick="limpar()">Cancelar</button>
+    </div>
+
+ 
+
+    <!-- Tabela de apresentação dos dados -->
+
+    <table class="table table-striped">
+
+        <thead>
+
+            <tr>
+                <td>Código</td>
+                <td>Nome</td>
+                <td>CPF</td>
+                <td>Cargo</td>
+                <td>Setor</td>
+                <td>Editar</td>
+            </tr>
+
+        </thead>
+        <tbody id="tabela"></tbody>
+
+    </table>
+
+</body>
+
+</html>
