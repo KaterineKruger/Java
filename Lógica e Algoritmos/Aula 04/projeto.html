@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Projeto - CRUD</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>Projeto - CRUD</title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Bootstrap -->
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
 
-    <!-- CSS -->
-    <link href="estilos.css" rel="stylesheet">
+        <!-- CSS -->
+        <link href="estilos.css" rel="stylesheet">
 
-    <!-- JS -->
-    <script src="script.js"></script>
-</head>
-<body>
+        <!-- JS -->
+        <script src="script.js"></script>
+    </head>
+    <body>
 
-    <!-- Mensagem -->
-    <p class="alert" id="mensagem"></p>
+        <!-- Mensagem -->
+        <p class="alert" id="mensagem"></p>
 
-    <!-- Formulário -->
-    <div>
-        <input type="hidden" id="indice">
-        <input type="text" placeholder="Nome" class="form-control" id="nome">
-        <input type="text" placeholder="E-mail" class="form-control" id="email">
-        <input type="text" placeholder="Cidade" class="form-control" id="cidade">
-    
-        <button class="btn btn-primary" id="btnCadastrar" onclick="cadastrar()">Cadastrar</button>
-        <button class="btn btn-warning" id="btnAlterar" onclick="alterar()">Alterar</button>
-        <button class="btn btn-danger" id="btnExcluir" onclick="excluir()">Excluir</button>
-        <button class="btn btn-secondary" id="btnCancelar" onclick="limpar()">Cancelar</button>
-    </div>
+        <!-- Formulário -->
+        <div>
+            <input type="hidden" id="indice">
+            <input type="text" placeholder="Nome" class="form-control"
+                id="nome">
+            <input type="text" placeholder="E-mail" class="form-control"
+                id="email">
+            <input type="text" placeholder="Cidade" class="form-control"
+                id="cidade">
 
-    <!-- Tabela -->
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <td>Código</td>
-                <td>Nome</td>
-                <td>E-mail</td>
-                <td>Cidade</td>
-                <td>Editar</td>
-            </tr>
-        </thead>
+            <button class="btn btn-primary" id="btnCadastrar"
+                onclick="cadastrar()">Cadastrar</button>
+            <button class="btn btn-warning" id="btnAlterar" onclick="alterar()">Alterar</button>
+            <button class="btn btn-danger" id="btnExcluir" onclick="excluir()">Excluir</button>
+            <button class="btn btn-secondary" id="btnCancelar"
+                onclick="limpar()">Cancelar</button>
+        </div>
 
-        <tbody id="tabela"></tbody>
-    </table>
+        <!-- Tabela -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>Código</td>
+                    <td>Nome</td>
+                    <td>E-mail</td>
+                    <td>Cidade</td>
+                    <td>Editar</td>
+                </tr>
+            </thead>
 
-</body>
+            <tbody id="tabela"></tbody>
+        </table>
+
+    </body>
 </html>
