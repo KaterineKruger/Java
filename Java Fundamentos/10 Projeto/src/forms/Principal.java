@@ -47,16 +47,18 @@ public class Principal extends JFrame {
 		label.setBounds(289, 163, 128, 101);
 		contentPane.add(label);
 		
-		JButton btnGerenciarUsurios = new JButton("Adicionar Usu\u00E1rios");
+		JButton btnGerenciarUsurios = new JButton("Gerenciar Usu\u00E1rios");
 		btnGerenciarUsurios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				// Exibir o formulário Usuário
-				Usuario usuario = new Usuario();
-				usuario.setVisible(true);
+
+				// Exibir o formulário GerenciarUsuario
+				GerenciarUsuario gerenciarUsuario = new GerenciarUsuario();
+				gerenciarUsuario.setVisible(true);
 				
 				// Fechar o formulário Principal
 				dispose();
+				
 			}
 		});
 		btnGerenciarUsurios.setBounds(101, 118, 142, 23);
@@ -66,9 +68,9 @@ public class Principal extends JFrame {
 		btnEditarDados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// Exibir o formulário GerenciarUsuario
-				GerenciarUsuario gerenciarUsuario = new GerenciarUsuario();
-				gerenciarUsuario.setVisible(true);
+				// Exibir o formulário Usuário
+				Usuario usuario = new Usuario();
+				usuario.setVisible(true);
 				
 				// Fechar o formulário Principal
 				dispose();

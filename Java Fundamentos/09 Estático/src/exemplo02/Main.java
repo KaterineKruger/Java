@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		// Chamar método de soma
+		// Chamar mï¿½todo de soma
 		Calculos.soma(7, 10);
 
 	}
