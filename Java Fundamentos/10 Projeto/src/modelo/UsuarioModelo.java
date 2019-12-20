@@ -1,11 +1,14 @@
 package modelo;
 
 public class UsuarioModelo {
-
+	
 	// Atributos
 	private int idUsuario, nivelUsuario;
 	private String nomeUsuario, emailUsuario, senhaUsuario;
-
+	
+	// Construtor - Padrão
+	public UsuarioModelo() {}
+	
 	// Construtor - Cadastrar
 	public UsuarioModelo(String nomeUsuario, String emailUsuario, String senhaUsuario, int nivelUsuario) {
 		this.nomeUsuario = nomeUsuario;
@@ -13,19 +16,17 @@ public class UsuarioModelo {
 		this.senhaUsuario = senhaUsuario;
 		this.nivelUsuario = nivelUsuario;
 	}
-
-	// Construtor - Editar
-	public UsuarioModelo(String nomeUsuario, String emailUsuario, String senhaUsuario, int nivelUsuario,
-			int idUsuario) {
+	
+	// Construtor - Alterar
+	public UsuarioModelo(String nomeUsuario, String emailUsuario, String senhaUsuario, int nivelUsuario, int idUsuario) {
 		this.nomeUsuario = nomeUsuario;
 		this.emailUsuario = emailUsuario;
 		this.senhaUsuario = senhaUsuario;
 		this.nivelUsuario = nivelUsuario;
 		this.idUsuario = idUsuario;
 	}
-
+	
 	// Set e Get
-
 	public int getIdUsuario() {
 		return idUsuario;
 	}
@@ -64,6 +65,6 @@ public class UsuarioModelo {
 
 	public void setSenhaUsuario(String senhaUsuario) {
 		this.senhaUsuario = senhaUsuario;
-	}
+	}	
 
 }

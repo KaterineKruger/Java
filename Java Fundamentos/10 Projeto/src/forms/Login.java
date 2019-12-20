@@ -7,7 +7,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import dao.UsuarioDao;
+import modelo.UsuarioModelo;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -42,13 +48,13 @@ public class Login extends JFrame {
 		// Adicionar componentes
 		JLabel lblEmail = new JLabel("E-Mail");
 		lblEmail.setForeground(Color.BLACK);
-		lblEmail.setFont(new Font("Consolas", Font.PLAIN, 12));
+		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblEmail.setBounds(45, 166, 51, 14);
 		contentPane.add(lblEmail);
 		
 		JLabel lblSenha = new JLabel("Senha");
 		lblSenha.setForeground(Color.BLACK);
-		lblSenha.setFont(new Font("Consolas", Font.PLAIN, 12));
+		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblSenha.setBounds(45, 195, 51, 14);
 		contentPane.add(lblSenha);
 		
@@ -62,15 +68,29 @@ public class Login extends JFrame {
 		contentPane.add(txtSenha);
 		
 		JButton btnEntrar = new JButton("Entrar");
+		btnEntrar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnEntrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
 				
-				// Exibir o formulário Principal
-				Principal principal = new Principal();
-				principal.setVisible(true);
+				// Obter e-mail e senha
+				String email = txtEMail.getText();
+				String senha = new String(txtSenha.getPassword());
 				
-				// Fechar o formulário Login
-				dispose();
+				// Realizar a autenticação
+				UsuarioModelo usuario = UsuarioDao.autenticar(email, senha);
+				
+				
+				// Validar
+				if(usuario.getIdUsuario() == 0) {
+					JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos");
+				}else {
+					principal.Principal.usuario = usuario;
+					
+					Principal principal = new Principal();
+					principal.setVisible(true);
+					
+					dispose();
+				}
 				
 			}
 		});

@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import java.awt.Font;
 
 public class Produto extends JFrame {
 
@@ -49,14 +50,17 @@ public class Produto extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNome = new JLabel("Nome");
+		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblNome.setBounds(69, 14, 46, 14);
 		contentPane.add(lblNome);
 		
 		JLabel lblValor = new JLabel("Valor");
+		lblValor.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblValor.setBounds(69, 39, 46, 14);
 		contentPane.add(lblValor);
 		
 		JLabel lblMarca = new JLabel("Marca");
+		lblMarca.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblMarca.setBounds(69, 64, 46, 14);
 		contentPane.add(lblMarca);
 		
@@ -75,20 +79,24 @@ public class Produto extends JFrame {
 		contentPane.add(comboBox);
 		
 		JButton button = new JButton("Cadastrar");
+		button.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		button.setBounds(20, 92, 89, 23);
 		contentPane.add(button);
 		
 		JButton button_1 = new JButton("Alterar");
+		button_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		button_1.setEnabled(false);
 		button_1.setBounds(120, 92, 89, 23);
 		contentPane.add(button_1);
 		
 		JButton button_2 = new JButton("Excluir");
+		button_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		button_2.setEnabled(false);
 		button_2.setBounds(219, 92, 89, 23);
 		contentPane.add(button_2);
 		
 		JButton button_3 = new JButton("Cancelar");
+		button_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		button_3.setEnabled(false);
 		button_3.setBounds(318, 92, 89, 23);
 		contentPane.add(button_3);
