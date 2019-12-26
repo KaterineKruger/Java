@@ -1,36 +1,30 @@
 // Pacote
 package forms;
 
-// Importar componentes
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+// Importar componente
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import dao.UsuarioDao;
 import modelo.UsuarioModelo;
-
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
 import java.awt.Font;
-import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
-import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 // Classe
-@SuppressWarnings({ "unused", "serial" })
 public class Login extends JFrame {
 
 	// Componentes
 	private JPanel contentPane;
-	private JTextField txtEMail;
+	private JTextField txtEmail;
 	private JPasswordField txtSenha;
+	private JButton btnEntrar;
 
 	// Construtor
 	public Login() {
@@ -46,34 +40,34 @@ public class Login extends JFrame {
 		contentPane.setLayout(null);
 		
 		// Adicionar componentes
-		JLabel lblEmail = new JLabel("E-Mail");
-		lblEmail.setForeground(Color.BLACK);
-		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblEmail.setBounds(45, 166, 51, 14);
+		JLabel lblEmail = new JLabel("E-mail");
+		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblEmail.setBounds(24, 150, 67, 24);
 		contentPane.add(lblEmail);
 		
 		JLabel lblSenha = new JLabel("Senha");
-		lblSenha.setForeground(Color.BLACK);
-		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblSenha.setBounds(45, 195, 51, 14);
+		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblSenha.setBounds(24, 188, 67, 24);
 		contentPane.add(lblSenha);
 		
-		txtEMail = new JTextField();
-		txtEMail.setBounds(99, 162, 248, 20);
-		contentPane.add(txtEMail);
-		txtEMail.setColumns(10);
+		txtEmail = new JTextField();
+		txtEmail.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtEmail.setBounds(83, 150, 347, 26);
+		contentPane.add(txtEmail);
+		txtEmail.setColumns(10);
 		
 		txtSenha = new JPasswordField();
-		txtSenha.setBounds(99, 191, 119, 20);
+		txtSenha.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtSenha.setBounds(83, 188, 347, 26);
 		contentPane.add(txtSenha);
 		
-		JButton btnEntrar = new JButton("Entrar");
+		btnEntrar = new JButton("Entrar");
 		btnEntrar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				// Obter e-mail e senha
-				String email = txtEMail.getText();
+				String email = txtEmail.getText();
 				String senha = new String(txtSenha.getPassword());
 				
 				// Realizar a autenticação
@@ -94,12 +88,12 @@ public class Login extends JFrame {
 				
 			}
 		});
-		btnEntrar.setBounds(178, 227, 89, 23);
+		btnEntrar.setBounds(165, 225, 117, 29);
 		contentPane.add(btnEntrar);
 		
-		JLabel lblImagem = new JLabel("");
-		lblImagem.setIcon(new ImageIcon("C:\\Users\\Katerine\\Desktop\\Apex\\Apex - noturno\\Java Fundamentos\\10 Projeto\\src\\imagens\\iconfinder_lock.png"));
-		lblImagem.setBounds(156, 11, 124, 137);
-		contentPane.add(lblImagem);
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("C:\\Users\\Katerine\\Desktop\\Apex\\Apex - noturno\\Java Fundamentos\\10 Projeto\\src\\imagens\\iconfinder_lock.png"));
+		label.setBounds(162, 23, 128, 108);
+		contentPane.add(label);
 	}
 }

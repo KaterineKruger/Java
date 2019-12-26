@@ -66,5 +66,5 @@ public class UsuarioModelo {
 	public void setSenhaUsuario(String senhaUsuario) {
 		this.senhaUsuario = senhaUsuario;
 	}	
-
+	
 }

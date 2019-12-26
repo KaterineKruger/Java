@@ -6,24 +6,23 @@ public class ProdutoModelo {
 	private int idProduto, marcaProduto;
 	private String nomeProduto;
 	private double valorProduto;
-
-	// Construtor - Cadastrar
+	
+	// Construtor - cadastrar
 	public ProdutoModelo(int marcaProduto, String nomeProduto, double valorProduto) {
 		this.marcaProduto = marcaProduto;
 		this.nomeProduto = nomeProduto;
 		this.valorProduto = valorProduto;
 	}
-
-	// Construtor - Editar
+	
+	//Construtor - alterar
 	public ProdutoModelo(int idProduto, int marcaProduto, String nomeProduto, double valorProduto) {
 		this.idProduto = idProduto;
 		this.marcaProduto = marcaProduto;
 		this.nomeProduto = nomeProduto;
 		this.valorProduto = valorProduto;
 	}
-
+	
 	// Set e Get
-
 	public int getIdProduto() {
 		return idProduto;
 	}

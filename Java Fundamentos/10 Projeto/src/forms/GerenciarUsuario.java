@@ -1,6 +1,7 @@
+// Pacote
 package forms;
 
-//Importar componentes
+// Importar componentes
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
@@ -15,24 +16,25 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
-
+// Classe
 public class GerenciarUsuario extends JFrame {
 
 	// Componentes
 	private JPanel contentPane;
-	private JPasswordField txtRepetirNovaSenha;
-	private JPasswordField txtNovaSenha;
-	private JPasswordField txtSenhaAtual;
-	private JTextField txtEmail;
 	private JTextField txtNome;
+	private JTextField txtEmail;
+	private JPasswordField txtSenhaAtual;
+	private JPasswordField txtSenhaNova1;
+	private JPasswordField txtSenhaNova2;
 
 	// Construtor
 	public GerenciarUsuario() {
 		
 		// JFrame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 479, 279);
+		setBounds(100, 100, 481, 313);
 		
 		// JPanel
 		contentPane = new JPanel();
@@ -41,27 +43,62 @@ public class GerenciarUsuario extends JFrame {
 		contentPane.setLayout(null);
 		
 		// Componentes
-		JLabel lblNome = new JLabel("Nome:");
-		lblNome.setBounds(22, 15, 52, 14);
-		contentPane.add(lblNome);
+		JLabel label = new JLabel("Nome");
+		label.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		label.setBounds(10, 39, 61, 16);
+		contentPane.add(label);
 		
-		JLabel lblEmail = new JLabel("E-mail:");
-		lblEmail.setBounds(22, 46, 46, 14);
-		contentPane.add(lblEmail);
+		txtNome = new JTextField();
+		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtNome.setColumns(10);
+		txtNome.setBounds(148, 29, 307, 26);
+		txtNome.setText(principal.Principal.usuario.getNomeUsuario());
+		contentPane.add(txtNome);
 		
-		JLabel lblSenhaAtual = new JLabel("Senha Atual:");
-		lblSenhaAtual.setBounds(22, 95, 84, 14);
-		contentPane.add(lblSenhaAtual);
+		JLabel label_1 = new JLabel("E-mail");
+		label_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		label_1.setBounds(10, 72, 61, 16);
+		contentPane.add(label_1);
 		
-		JLabel lblNovaSenha = new JLabel("Nova senha:");
-		lblNovaSenha.setBounds(22, 126, 74, 14);
+		txtEmail = new JTextField();
+		txtEmail.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtEmail.setColumns(10);
+		txtEmail.setBounds(148, 66, 307, 26);
+		txtEmail.setText(principal.Principal.usuario.getEmailUsuario());
+		contentPane.add(txtEmail);
+		
+		JLabel lblSsehaAtual = new JLabel("Senha atual");
+		lblSsehaAtual.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblSsehaAtual.setBounds(10, 110, 88, 16);
+		contentPane.add(lblSsehaAtual);
+		
+		JLabel lblNovaSenha = new JLabel("Nova senha");
+		lblNovaSenha.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNovaSenha.setBounds(10, 149, 88, 16);
 		contentPane.add(lblNovaSenha);
 		
-		JLabel lblRepetirNovaSenha = new JLabel("Repita a nova senha:");
-		lblRepetirNovaSenha.setBounds(22, 157, 138, 14);
+		JLabel lblRepetirNovaSenha = new JLabel("Repetir nova senha");
+		lblRepetirNovaSenha.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblRepetirNovaSenha.setBounds(10, 185, 125, 16);
 		contentPane.add(lblRepetirNovaSenha);
 		
+		txtSenhaAtual = new JPasswordField();
+		txtSenhaAtual.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtSenhaAtual.setBounds(148, 104, 307, 26);
+		contentPane.add(txtSenhaAtual);
+		
+		txtSenhaNova1 = new JPasswordField();
+		txtSenhaNova1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtSenhaNova1.setBounds(148, 143, 307, 26);
+		contentPane.add(txtSenhaNova1);
+		
+		txtSenhaNova2 = new JPasswordField();
+		txtSenhaNova2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtSenhaNova2.setBounds(148, 179, 307, 26);
+		contentPane.add(txtSenhaNova2);
+		
 		JButton btnAlterar = new JButton("Alterar");
+		btnAlterar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnAlterar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -74,8 +111,8 @@ public class GerenciarUsuario extends JFrame {
 				
 				// Obter os valores das senhas
 				String senha1 = new String(txtSenhaAtual.getPassword());
-				String senha2 = new String(txtNovaSenha.getPassword());
-				String senha3 = new String(txtRepetirNovaSenha.getPassword());
+				String senha2 = new String(txtSenhaNova1.getPassword());
+				String senha3 = new String(txtSenhaNova2.getPassword());
 				
 				// Validar senhas
 				if(!senha1.equals(senhaUsuario)) {
@@ -100,10 +137,11 @@ public class GerenciarUsuario extends JFrame {
 				
 			}
 		});
-		btnAlterar.setBounds(137, 197, 89, 23);
+		btnAlterar.setBounds(93, 228, 117, 29);
 		contentPane.add(btnAlterar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -111,34 +149,12 @@ public class GerenciarUsuario extends JFrame {
 				Principal principal = new Principal();
 				principal.setVisible(true);
 				
-				// Fechar o formulário GerenciarUsuario
+				// Fechar o formulário Login
 				dispose();
 				
 			}
 		});
-		btnCancelar.setBounds(251, 197, 89, 23);
+		btnCancelar.setBounds(222, 228, 117, 29);
 		contentPane.add(btnCancelar);
-		
-		txtRepetirNovaSenha = new JPasswordField();
-		txtRepetirNovaSenha.setBounds(189, 152, 264, 23);
-		contentPane.add(txtRepetirNovaSenha);
-		
-		txtNovaSenha = new JPasswordField();
-		txtNovaSenha.setBounds(189, 121, 264, 23);
-		contentPane.add(txtNovaSenha);
-		
-		txtSenhaAtual = new JPasswordField();
-		txtSenhaAtual.setBounds(189, 90, 264, 23);
-		contentPane.add(txtSenhaAtual);
-		
-		txtEmail = new JTextField();
-		txtEmail.setColumns(10);
-		txtEmail.setBounds(189, 43, 264, 23);
-		contentPane.add(txtEmail);
-		
-		txtNome = new JTextField();
-		txtNome.setColumns(10);
-		txtNome.setBounds(189, 13, 264, 23);
-		contentPane.add(txtNome);
 	}
 }

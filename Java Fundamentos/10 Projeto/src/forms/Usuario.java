@@ -6,13 +6,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.awt.Font;
 
 // Classe
@@ -22,15 +24,14 @@ public class Usuario extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtNome;
 	private JTextField txtEmail;
-	private JTable table;
+	private JTable tblUsuarios;
 
-	
 	// Construtor
 	public Usuario() {
 		
 		// JFrame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 551, 339);
+		setBounds(100, 100, 500, 393);
 		
 		// JPanel
 		contentPane = new JPanel();
@@ -41,69 +42,80 @@ public class Usuario extends JFrame {
 		// Componentes
 		JLabel lblNome = new JLabel("Nome");
 		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblNome.setBounds(98, 6, 76, 17);
+		lblNome.setBounds(14, 25, 61, 16);
 		contentPane.add(lblNome);
 		
-		JLabel lblEmail = new JLabel("E-Mail");
+		JLabel lblEmail = new JLabel("E-mail");
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblEmail.setBounds(98, 33, 55, 20);
+		lblEmail.setBounds(14, 65, 61, 16);
 		contentPane.add(lblEmail);
 		
-		JLabel lblNivel = new JLabel("N\u00EDvel");
-		lblNivel.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblNivel.setBounds(98, 61, 55, 27);
-		contentPane.add(lblNivel);
+		JLabel lblNvel = new JLabel("Nível");
+		lblNvel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNvel.setBounds(14, 108, 61, 16);
+		contentPane.add(lblNvel);
 		
 		txtNome = new JTextField();
-		txtNome.setBounds(173, 5, 238, 20);
+		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtNome.setBounds(69, 20, 403, 26);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		txtEmail = new JTextField();
-		txtEmail.setColumns(10);
-		txtEmail.setBounds(173, 34, 238, 20);
+		txtEmail.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtEmail.setBounds(69, 60, 403, 26);
 		contentPane.add(txtEmail);
+		txtEmail.setColumns(10);
 		
 		JComboBox cbxNivel = new JComboBox();
-		cbxNivel.setBounds(173, 65, 238, 20);
+		cbxNivel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		cbxNivel.setBounds(69, 104, 403, 27);
 		contentPane.add(cbxNivel);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnCadastrar.setBounds(35, 96, 89, 23);
+		btnCadastrar.setBounds(6, 160, 117, 29);
 		contentPane.add(btnCadastrar);
 		
 		JButton btnAlterar = new JButton("Alterar");
 		btnAlterar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnAlterar.setEnabled(false);
-		btnAlterar.setBounds(164, 96, 89, 23);
+		btnAlterar.setBounds(123, 160, 117, 29);
 		contentPane.add(btnAlterar);
 		
 		JButton btnExcluir = new JButton("Excluir");
 		btnExcluir.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnExcluir.setEnabled(false);
-		btnExcluir.setBounds(298, 96, 89, 23);
+		btnExcluir.setBounds(239, 160, 117, 29);
 		contentPane.add(btnExcluir);
 		
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnCancelar.setEnabled(false);
-		btnCancelar.setBounds(422, 96, 89, 23);
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// Exibir o formulário Principal
+				Principal principal = new Principal();
+				principal.setVisible(true);
+				
+				// Fechar o formulário Login
+				dispose();
+				
+			}
+		});
+		btnCancelar.setBounds(355, 160, 117, 29);
 		contentPane.add(btnCancelar);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 121, 535, 180);
-		contentPane.add(scrollPane);
+		JScrollPane sclBarra = new JScrollPane();
+		sclBarra.setBounds(16, 201, 449, 148);
+		contentPane.add(sclBarra);
 		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Nome", "E-mail", "N\u00EDvel"
-			}
-		));
-		table.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		scrollPane.setViewportView(table);
+		DefaultTableModel dados = new DefaultTableModel();
+		dados.addColumn("Nome");
+		dados.addColumn("E-mail");
+		dados.addColumn("Nível");
+		
+		tblUsuarios = new JTable(dados);
+		sclBarra.setViewportView(tblUsuarios);
 	}
 }

@@ -1,122 +1,122 @@
+// Pacote
 package forms;
 
+// Importar componentes
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.awt.Font;
 
+// Classe
 public class Produto extends JFrame {
 
+	// Componentes
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTable table;
+	private JTextField txtNome;
+	private JTextField txtValor;
+	private JTable tblProdutos;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Produto frame = new Produto();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
+	// Construtor
 	public Produto() {
+		
+		// JFrame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 514, 387);
+		
+		// JPanel
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNome = new JLabel("Nome");
-		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblNome.setBounds(69, 14, 46, 14);
-		contentPane.add(lblNome);
+		// Componentes
+		JLabel label = new JLabel("Nome");
+		label.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		label.setBounds(26, 19, 61, 16);
+		contentPane.add(label);
 		
 		JLabel lblValor = new JLabel("Valor");
 		lblValor.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblValor.setBounds(69, 39, 46, 14);
+		lblValor.setBounds(26, 59, 61, 16);
 		contentPane.add(lblValor);
 		
 		JLabel lblMarca = new JLabel("Marca");
 		lblMarca.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblMarca.setBounds(69, 64, 46, 14);
+		lblMarca.setBounds(26, 102, 61, 16);
 		contentPane.add(lblMarca);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(109, 11, 238, 20);
-		contentPane.add(textField);
+		txtNome = new JTextField();
+		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtNome.setColumns(10);
+		txtNome.setBounds(85, 14, 399, 26);
+		contentPane.add(txtNome);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(109, 36, 238, 20);
-		contentPane.add(textField_1);
+		txtValor = new JTextField();
+		txtValor.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtValor.setColumns(10);
+		txtValor.setBounds(85, 54, 399, 26);
+		contentPane.add(txtValor);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(109, 61, 238, 20);
-		contentPane.add(comboBox);
+		JComboBox cbxMarca = new JComboBox();
+		cbxMarca.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		cbxMarca.setBounds(85, 98, 399, 27);
+		contentPane.add(cbxMarca);
 		
-		JButton button = new JButton("Cadastrar");
-		button.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button.setBounds(20, 92, 89, 23);
-		contentPane.add(button);
+		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnCadastrar.setBounds(18, 154, 117, 29);
+		contentPane.add(btnCadastrar);
 		
-		JButton button_1 = new JButton("Alterar");
-		button_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button_1.setEnabled(false);
-		button_1.setBounds(120, 92, 89, 23);
-		contentPane.add(button_1);
+		JButton btnAlterar = new JButton("Alterar");
+		btnAlterar.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnAlterar.setEnabled(false);
+		btnAlterar.setBounds(135, 154, 117, 29);
+		contentPane.add(btnAlterar);
 		
-		JButton button_2 = new JButton("Excluir");
-		button_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button_2.setEnabled(false);
-		button_2.setBounds(219, 92, 89, 23);
-		contentPane.add(button_2);
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnExcluir.setEnabled(false);
+		btnExcluir.setBounds(251, 154, 117, 29);
+		contentPane.add(btnExcluir);
 		
-		JButton button_3 = new JButton("Cancelar");
-		button_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button_3.setEnabled(false);
-		button_3.setBounds(318, 92, 89, 23);
-		contentPane.add(button_3);
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(422, 255, -232, -102);
-		contentPane.add(scrollPane);
-		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(10, 118, 414, 139);
-		contentPane.add(scrollPane_1);
-		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Nome", "Marca", "Valor"
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// Exibir o formulário Principal
+				Principal principal = new Principal();
+				principal.setVisible(true);
+				
+				// Fechar o formulário Login
+				dispose();
+				
 			}
-		));
-		scrollPane_1.setViewportView(table);
+		});
+		btnCancelar.setBounds(367, 154, 117, 29);
+		contentPane.add(btnCancelar);
+		
+		JScrollPane sclBarra = new JScrollPane();
+		sclBarra.setBounds(28, 195, 449, 148);
+		contentPane.add(sclBarra);
+		
+		DefaultTableModel dados = new DefaultTableModel();
+		dados.addColumn("Nome");
+		dados.addColumn("Marca");
+		dados.addColumn("valor");
+		
+		tblProdutos = new JTable(dados);
+		sclBarra.setViewportView(tblProdutos);
 	}
 }
