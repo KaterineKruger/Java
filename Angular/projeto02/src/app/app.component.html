@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <form [formGroup]="formulario">
+        <input type="text" placeholder="Nome" class="form-control" formControlName="campoNome">
+        <input type="text" placeholder="E-Mail" class="form-control" formControlName="campoEmail">
+        <input type="text" placeholder="Idade" class="form-control" formControlName="campoIdade">
+        <button class="btn btn-outline-primary" *ngIf="botaoCadastrar" (click)="cadastrar()">Cadastrar</button>
+        <button class="btn btn-outline-warning" *ngIf="!botaoCadastrar" (click)="alterar()">Alterar</button>
+        <button class="btn btn-outline-danger" *ngIf="!botaoCadastrar" (click)="excluir()">Excluir</button>
+        <button class="btn btn-outline-secondary" *ngIf="!botaoCadastrar" (click)="cancelar()">Cancelar</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>E-Mail</th>
+            <th>Idade</th>
+            <th>Selecionar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of pessoas; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{p.campoNome}}</td>
+            <td>{{p.campoEmail}}</td>
+            <td>{{p.campoIdade}}</td>
+            <td><button class="btn btn-outline-success" (click)="selecionar(i)">Selecionar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

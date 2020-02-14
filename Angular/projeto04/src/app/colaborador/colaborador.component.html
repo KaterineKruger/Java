@@ -1,0 +1,21 @@
+<form [formGroup]="formulario">
+    <input type="text" placeholder="Nome" formControlName="nome" class="form-control">
+    <input type="text" placeholder="Cargo" formControlName="cargo" class="form-control">
+    <input type="text" placeholder="Salário" formControlName="salario" class="form-control">
+    <button class="btn btn-outline-primary" *ngIf="botao" (click)="cadastrar()">Cadastrar</button>
+    <button class="btn btn-outline-warning" *ngIf="!botao">Alterar</button>
+    <button class="btn btn-outline-danger" *ngIf="!botao">Excluir</button>
+    <button class="btn btn-outline-secondary" *ngIf="!botao">Cancelar</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Cargo</th>
+            <th>Salário</th>
+            <th>Alterar</th>
+        </tr>
+    </thead>
+</table>
