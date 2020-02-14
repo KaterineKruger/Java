@@ -1,0 +1,9 @@
+package com.api.projetoColaborador.repositorio;
+
+import org.springframework.data.repository.Repository;
+
+import com.api.projetoColaborador.modelo.ColaboradorModelo;
+
+public interface ColaboradorReposirorio extends Repository<ColaboradorModelo, Integer> {
+
+}

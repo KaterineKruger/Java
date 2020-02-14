@@ -1,0 +1,14 @@
+package com.api.projetoColaborador.modelo;
+
+public class RespostaModelo {
+
+	// Atributo
+	private String mensagem;
+	
+	// Construtores
+	public Respostamodelo() {}
+	
+	public RespostaModelo(String mensagem) {
+		this.mensagem = mensagem;
+	}
+}
